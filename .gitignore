@@ -51,3 +51,7 @@ backend/.wwebjs_cache/
 # Sensitive/Private Docs
 demonstration_guide.md
 DEPLOYMENT.md
+
+# Git Rebuild Scripts
+rebuild_git.sh
+rebuild_git.ps1
