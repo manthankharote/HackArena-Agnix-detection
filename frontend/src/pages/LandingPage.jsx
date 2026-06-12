@@ -136,9 +136,6 @@ export default function LandingPage() {
           >
             Autonomous AI Agent for <br />
             <span className="gradient-text-green">Illegal Dumping Detection & Evidence Collection</span>
-            <div style={{ fontSize: '1.8rem', fontWeight: 600, marginTop: '12px', opacity: 0.9 }}>
-              बेकायदेशीर कचरा टाकणे शोधणे आणि पुरावा गोळा करण्यासाठी स्वायत्त एआय एजंट
-            </div>
           </motion.h1>
 
           <motion.p
@@ -148,9 +145,6 @@ export default function LandingPage() {
             className="hero-subtitle"
           >
             Empowering municipal corporations with real-time YOLOv11 surveillance, autonomous environmental logic, and instant WhatsApp dispatch alerts with irrefutable evidence.
-            <span style={{ display: 'block', marginTop: '8px', fontSize: '0.98rem', opacity: 0.85, fontWeight: 500 }}>
-              यलोव्ह११ (YOLOv11) रिअल-टाइम सर्वेक्षण, स्वायत्त निर्णय प्रणाली आणि संपूर्ण पुराव्यासह त्वरित व्हॉट्सॲप सूचनांद्वारे महानगरपालिकांना सक्षम करणे.
-            </span>
           </motion.p>
 
           <motion.div
@@ -382,13 +376,10 @@ export default function LandingPage() {
       <section id="problem" className="landing-section">
         <div className="section-container">
           <div className="section-header">
-            <span className="section-label">The Municipal Challenge / शहरासमोरील आव्हाने</span>
-            <h2 className="section-title">The Challenge Cities Face / कचरा व्यवस्थापनातील समस्या</h2>
+            <span className="section-label">The Municipal Challenge</span>
+            <h2 className="section-title">The Challenge Cities Face</h2>
             <p className="section-subtitle">
               Municipal corporations struggle with outdated, manual systems to keep public areas clean. Passive infrastructure leads to delayed responses and structural inefficiencies.
-              <span style={{ display: 'block', marginTop: '6px', fontSize: '0.92rem', opacity: 0.85 }}>
-                सार्वजनिक ठिकाणे स्वच्छ ठेवण्यासाठी महानगरपालिकांना जुन्या आणि मानवी पद्धतींमुळे अनेक अडचणी येतात. यामुळे तक्रार निवारण्यास विलंब होतो आणि मनुष्यबळाचे योग्य नियोजन करता येत नाही.
-              </span>
             </p>
           </div>
 
@@ -403,12 +394,9 @@ export default function LandingPage() {
               <div className="card-icon-wrapper">
                 <Trash2 />
               </div>
-              <h3 className="card-title-lg">Illegal Garbage Dumping <br /><span style={{ fontSize: '0.95rem', color: 'var(--accent-green)' }}>बेकायदेशीर कचरा टाकणे</span></h3>
+              <h3 className="card-title-lg">Illegal Garbage Dumping</h3>
               <p className="card-description">
                 Piles of waste pile up on roadsides, street corners, and empty lots. Without automated monitoring, these spots rapidly become persistent public health hazards.
-                <span style={{ display: 'block', marginTop: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '6px' }}>
-                  रस्त्यांच्या कडेला आणि मोकळ्या भूखंडांवर कचऱ्याचे ढीग साचतात, ज्यामुळे आरोग्याला मोठा धोका निर्माण होतो.
-                </span>
               </p>
             </motion.div>
 
@@ -422,12 +410,9 @@ export default function LandingPage() {
               <div className="card-icon-wrapper" style={{ color: 'var(--accent-blue)' }}>
                 <Clock />
               </div>
-              <h3 className="card-title-lg">Delayed Complaint Resolution <br /><span style={{ fontSize: '0.95rem', color: 'var(--accent-blue)' }}>तक्रार निवारण्यास विलंब</span></h3>
+              <h3 className="card-title-lg">Delayed Complaint Resolution</h3>
               <p className="card-description">
                 Traditional complaints rely on citizens calling or writing. Processing, forwarding, and acting on these issues takes days or weeks, resulting in unhygienic environments.
-                <span style={{ display: 'block', marginTop: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '6px' }}>
-                  नागरिकांच्या तक्रारी पोहोचण्यास आणि त्यावर प्रत्यक्ष कारवाई होण्यास दिवस किंवा आठवडे लागतात, ज्यामुळे परिसरात दुर्गंधी व अस्वच्छता पसरते.
-                </span>
               </p>
             </motion.div>
 
@@ -441,12 +426,9 @@ export default function LandingPage() {
               <div className="card-icon-wrapper">
                 <Camera />
               </div>
-              <h3 className="card-title-lg">Lack of Live Monitoring <br /><span style={{ fontSize: '0.95rem', color: 'var(--accent-green)' }}>देखरेखीचा अभाव</span></h3>
+              <h3 className="card-title-lg">Lack of Live Monitoring</h3>
               <p className="card-description">
                 Cities have thousands of CCTV cameras, but they are only checked after an incident. Authorities lack the manpower to monitor feeds live for civic violations.
-                <span style={{ display: 'block', marginTop: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '6px' }}>
-                  शहरात सीसीटीव्ही आहेत, पण कचरा फेकणाऱ्यांवर २४/७ लक्ष ठेवण्यासाठी सतत मनुष्यबळ उपलब्ध नसते.
-                </span>
               </p>
             </motion.div>
 
@@ -460,12 +442,9 @@ export default function LandingPage() {
               <div className="card-icon-wrapper" style={{ color: 'var(--accent-blue)' }}>
                 <TrendingUp />
               </div>
-              <h3 className="card-title-lg">Poor Resource Allocation <br /><span style={{ fontSize: '0.95rem', color: 'var(--accent-blue)' }}>संसाधनांचे अयोग्य वाटप</span></h3>
+              <h3 className="card-title-lg">Poor Resource Allocation</h3>
               <p className="card-description">
                 Sanitation crews are deployed on fixed schedules instead of dynamic demand. Trucks sweep clean streets while garbage piles block busy commercial sectors.
-                <span style={{ display: 'block', marginTop: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '6px' }}>
-                  कचरा उचलणाऱ्या गाड्या ठराविक वेळापत्रकानुसार फिरतात, जिथे कचऱ्याचा ढीग मोठा आहे तिथे वेळेवर जात नाहीत.
-                </span>
               </p>
             </motion.div>
 
@@ -480,12 +459,9 @@ export default function LandingPage() {
               <div className="card-icon-wrapper">
                 <AlertTriangle />
               </div>
-              <h3 className="card-title-lg">Unhygienic Public Spaces <br /><span style={{ fontSize: '0.95rem', color: 'var(--accent-green)' }}>अस्वच्छ सार्वजनिक ठिकाणे</span></h3>
+              <h3 className="card-title-lg">Unhygienic Public Spaces</h3>
               <p className="card-description">
                 Accumulated garbage leads to foul odors, bacterial growth, stray animals, and waterlogging, posing massive risks to general public health.
-                <span style={{ display: 'block', marginTop: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '6px' }}>
-                  साचलेल्या कचऱ्यामुळे दुर्गंधी पसरते, रोगराईचे प्रमाण वाढते आणि भटक्या प्राण्यांचा वावर वाढतो.
-                </span>
               </p>
             </motion.div>
           </div>
