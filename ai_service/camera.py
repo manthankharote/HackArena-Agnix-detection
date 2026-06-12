@@ -11,6 +11,7 @@ import os
 # Suppress underlying decoder verbosity to ensure pristine validator extraction.
 os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
 os.environ["OPENCV_LOG_LEVEL"] = "OFF"
+os.environ["OPENCV_FFMPEG_HTTP_HEADERS"] = "Connection: close"
 
 import cv2
 import sys

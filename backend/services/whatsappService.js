@@ -86,7 +86,10 @@ setInterval(async () => {
     messageQueue = [];
     for (const item of toSend) {
         try {
-            const cleaned = item.phoneNumber.replace(/\D/g, '');
+            let cleaned = item.phoneNumber.replace(/\D/g, '');
+            if (cleaned.length === 10) {
+                cleaned = '91' + cleaned;
+            }
             const formatted = cleaned.includes('@c.us') ? cleaned : `${cleaned}@c.us`;
             await client.sendMessage(formatted, item.message);
             console.log(`[WHATSAPP QUEUE] ✅ Sent to ${item.phoneNumber}`);
@@ -119,7 +122,10 @@ const sendWhatsAppAlert = async (phoneNumber, message) => {
 
     if (isReady) {
         try {
-            const cleaned = phoneNumber.replace(/\D/g, '');
+            let cleaned = phoneNumber.replace(/\D/g, '');
+            if (cleaned.length === 10) {
+                cleaned = '91' + cleaned;
+            }
             const formatted = cleaned.includes('@c.us') ? cleaned : `${cleaned}@c.us`;
             await client.sendMessage(formatted, message);
             messageQueue.pop();

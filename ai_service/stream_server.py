@@ -29,6 +29,25 @@ reconnect_url = None
 # Thread safety lock for frame reading
 frame_lock = threading.Lock()
 
+# Backend Relay Settings
+BACKEND_URL = os.environ.get("BACKEND_URL", "http://localhost:5000")
+DETECTION_API_KEY = os.environ.get("DETECTION_API_KEY", "cleancity-detection-key")
+last_alert_time = 0
+ALERT_COOLDOWN = 10.0 # Suppress duplicate alerts locally
+
+def send_to_backend(data: dict):
+    try:
+        import requests
+        r = requests.post(
+            f"{BACKEND_URL}/api/detections",
+            json=data,
+            headers={"x-api-key": DETECTION_API_KEY},
+            timeout=5
+        )
+        print(f"[SYSTEM] Alert relayed to backend: status code {r.status_code}")
+    except Exception as e:
+        print(f"[ERROR] Failed to relay alert to backend: {e}")
+
 from pydantic import BaseModel
 
 class SourceSchema(BaseModel):
@@ -101,6 +120,32 @@ def generate_mjpeg_frames():
         analysis = result["analysis"]
         classification = analysis["classification"]
         
+        # Relay alert to backend if illegal dumping is detected
+        if classification == "ILLEGAL":
+            global last_alert_time
+            current_time = time.time()
+            if current_time - last_alert_time > ALERT_COOLDOWN:
+                last_alert_time = current_time
+                def run_relay(ann_img, res, anal):
+                    try:
+                        from ai_service.utils import frame_to_base64
+                        send_to_backend({
+                            "imageBase64": frame_to_base64(ann_img),
+                            "cameraId": getattr(args, "camera_id", "cam-001"),
+                            "cameraName": getattr(args, "camera_name", "Main Camera"),
+                            "ward": getattr(args, "ward", "Unassigned"),
+                            "latitude": getattr(args, "lat", 18.5204),
+                            "longitude": getattr(args, "lng", 73.8567),
+                            "detectedObjects": [{"label": l} for l in res.get("labels", [])],
+                            "total": res.get("total", 0),
+                            "confidence": anal.get("confidence_score", 0.0),
+                            "dumpType": "ILLEGAL"
+                        })
+                    except Exception as relay_err:
+                        print(f"[ERROR] Background relay failed: {relay_err}")
+                
+                threading.Thread(target=run_relay, args=(annotated.copy(), result, analysis), daemon=True).start()
+        
         # Overlay HUD on frame
         color = (0, 0, 255) if classification == "ILLEGAL" else (0, 200, 0) if classification == "LEGAL" else (100, 100, 100)
         text = "⚠ ILLEGAL DUMP" if classification == "ILLEGAL" else "✓ LEGAL DUMP" if classification == "LEGAL" else "MONITORING..."
@@ -137,6 +182,14 @@ def main():
     parser.add_argument("--url", default="https://www.youtube.com/@LofiGirl/live", help="Camera URL or YouTube stream link")
     parser.add_argument("--file", help="Video file path")
     parser.add_argument("--port", type=int, default=7861, help="FastAPI port")
+    
+    # Metadata parameters matching live_monitor.py
+    parser.add_argument("--camera-id", default="cam-001")
+    parser.add_argument("--camera-name", default="Main Camera")
+    parser.add_argument("--ward", default="Unassigned")
+    parser.add_argument("--lat", type=float, default=18.5204)
+    parser.add_argument("--lng", type=float, default=73.8567)
+    
     args = parser.parse_args()
 
     print(f"\n[SYSTEM] Initializing video source: {args.source}...")
