@@ -29,14 +29,6 @@ export default function NewReport() {
     fetchWards();
   }, []);
 
-  const handleFile = (f) => {
-    if (!f) return;
-    setFile(f);
-    const reader = new FileReader();
-    reader.onload = e => setPreview(e.target.result);
-    reader.readAsDataURL(f);
-  };
-
   const fetchLocation = () => {
     setLocLoading(true);
     navigator.geolocation.getCurrentPosition(
@@ -50,6 +42,15 @@ export default function NewReport() {
         setLocLoading(false);
       }
     );
+  };
+
+  const handleFile = (f) => {
+    if (!f) return;
+    setFile(f);
+    const reader = new FileReader();
+    reader.onload = e => setPreview(e.target.result);
+    reader.readAsDataURL(f);
+    fetchLocation();
   };
 
   const handleSubmit = async (e) => {
