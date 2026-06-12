@@ -31,6 +31,12 @@ export default function NewReport() {
 
   const fetchLocation = () => {
     setLocLoading(true);
+    if (!navigator.geolocation) {
+      console.warn('[GEOLOCATION] Geolocation is not available in this context (requires HTTPS or localhost). Using default fallback.');
+      setLocation({ lat: 18.5204, lng: 73.8567 });
+      setLocLoading(false);
+      return;
+    }
     navigator.geolocation.getCurrentPosition(
       pos => {
         setLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
