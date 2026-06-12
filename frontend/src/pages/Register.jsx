@@ -37,7 +37,7 @@ export default function Register() {
       <div className="auth-left">
         <div style={{ textAlign: 'center' }}>
           <div style={{ fontSize: '4rem', marginBottom: '16px' }}>🏙️</div>
-          <div className="brand-title">AgniX AI</div>
+          <div className="brand-title">CleanCity AI</div>
           <div style={{ 
             fontSize: '2.8rem', 
             fontWeight: 800, 
@@ -49,7 +49,7 @@ export default function Register() {
             backgroundClip: 'text',
             fontFamily: "'Outfit', sans-serif"
           }}>
-            छत्रपती संभाजीनगर
+            Municipal Corporation
           </div>
           <p className="brand-desc">Join thousands of citizens making their city cleaner and smarter.</p>
         </div>

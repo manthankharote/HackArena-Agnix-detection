@@ -48,7 +48,7 @@ MONGO_URI=mongodb+srv://123mankh_db_user:mankh123password@cluster0.lzlcget.mongo
 JWT_SECRET=CleanCityAI_SuperSecret_JWT_Key_2024_ChangeMe
 JWT_EXPIRE=7d
 AI_SERVICE_URL=https://manthankharote-illegal-garbage-dumping-detection.hf.space
-CLIENT_URL=https://cleancity.agnix.site
+CLIENT_URL=https://cleancity-ai.site
 DETECTION_API_KEY=cleancity-detection-key
 PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 ENVFILE

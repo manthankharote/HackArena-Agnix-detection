@@ -11,14 +11,14 @@ pinned: false
   <img src="https://res.cloudinary.com/dim2u2lq2/image/upload/v1775763280/banner_nyjov0.png" alt="AgniX Banner" width="100%">
 </div>
 
-# 🗑️ AgniX: Autonomous AI Agent for Illegal Dumping Detection
+# 🗑️ CleanCity AI: Autonomous AI Agent for Illegal Dumping Detection
 
-Team AgniX presents an autonomous, AI-powered municipal surveillance system designed to help city authorities and municipal corporations detect, analyze, and eliminate illegal garbage dumping in real-time.
+CleanCity AI presents an autonomous, AI-powered municipal surveillance system designed to help city authorities and municipal corporations detect, analyze, and eliminate illegal garbage dumping in real-time.
 
 ---
 
 ## 🚀 Live Links & Project Assets
-- **🤖 Live Environment (Hugging Face):** [AgniX OpenEnv Space](https://huggingface.co/spaces/manthankharote/illegal-dumping-env)
+- **🤖 Live Environment (Hugging Face):** [CleanCity AI OpenEnv Space](https://huggingface.co/spaces/manthankharote/illegal-dumping-env)
 - **🎯 Core Objective:** Automate municipal reporting, reduce manual CCTV monitoring, and enable zero-latency response to civic violations.
 
 ---

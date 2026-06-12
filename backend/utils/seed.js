@@ -19,10 +19,10 @@ const seed = async () => {
     await Task.deleteMany({});
 
     const users = await User.create([
-      { name: 'Super Admin', email: 'superadmin@agnix.com', password: 'admin123', role: 'superadmin', ward: 'all' },
-      { name: 'Ward Admin', email: 'admin@agnix.com', password: 'admin123', role: 'admin', ward: 'ward-1' },
-      { name: 'Field Worker', email: 'worker@agnix.com', password: 'admin123', role: 'worker', ward: 'ward-1' },
-      { name: 'Citizen User', email: 'citizen@agnix.com', password: 'admin123', role: 'citizen' },
+      { name: 'Super Admin', email: 'superadmin@cleancity.com', password: 'admin123', role: 'superadmin', ward: 'all' },
+      { name: 'Ward Admin', email: 'admin@cleancity.com', password: 'admin123', role: 'admin', ward: 'ward-1' },
+      { name: 'Field Worker', email: 'worker@cleancity.com', password: 'admin123', role: 'worker', ward: 'ward-1' },
+      { name: 'Citizen User', email: 'citizen@cleancity.com', password: 'admin123', role: 'citizen' },
     ]);
 
     console.log('✅ Users seeded:', users.map(u => `${u.role}: ${u.email}`));
@@ -73,10 +73,10 @@ const seed = async () => {
     await Report.findByIdAndUpdate(seededReports[4]._id, { status: 'in-progress', assignedTo: worker._id });
 
     console.log('\n📋 LOGIN CREDENTIALS:');
-    console.log('  superadmin@agnix.com / admin123  →  Super Admin');
-    console.log('  admin@agnix.com / admin123       →  Ward Admin');
-    console.log('  worker@agnix.com / admin123      →  Field Worker');
-    console.log('  citizen@agnix.com / admin123     →  Citizen User');
+    console.log('  superadmin@cleancity.com / admin123  →  Super Admin');
+    console.log('  admin@cleancity.com / admin123       →  Ward Admin');
+    console.log('  worker@cleancity.com / admin123      →  Field Worker');
+    console.log('  citizen@cleancity.com / admin123     →  Citizen User');
 
     process.exit(0);
   } catch (err) {

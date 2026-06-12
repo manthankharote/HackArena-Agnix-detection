@@ -241,7 +241,7 @@ export default function AdminDashboard() {
           <div className="card" style={{ marginBottom: 20 }}>
             <div className="flex-between" style={{ marginBottom: 16 }}>
               <div className="card-title" style={{ marginBottom: 0 }}>
-                📹 Live CCTV Surveillance & AI Detection (Team AgniX)
+                📹 Live CCTV Surveillance & AI Detection (CleanCity AI)
               </div>
               <span className="badge badge-high" style={{ background: '#ef4444', color: 'white', padding: '4px 8px', borderRadius: '4px', fontWeight: 'bold' }}>
                 🔴 LIVE
