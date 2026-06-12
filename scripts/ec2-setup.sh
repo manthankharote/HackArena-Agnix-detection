@@ -32,16 +32,16 @@ sudo apt install -y nginx
 # 5. Clone the repository
 echo "📂 Cloning repository..."
 cd ~
-if [ -d "Illegal-Dumping-Detection" ]; then
+if [ -d "HackArena-Agnix-detection" ]; then
     echo "Repository already exists, pulling latest..."
-    cd Illegal-Dumping-Detection && git pull origin main && cd ~
+    cd HackArena-Agnix-detection && git pull origin main && cd ~
 else
-    git clone https://github.com/manthankharote/Illegal-Dumping-Detection.git
+    git clone https://github.com/manthankharote/HackArena-Agnix-detection.git
 fi
 
 # 6. Create backend .env file (user must edit this)
 echo "📝 Creating backend .env template..."
-cat > ~/Illegal-Dumping-Detection/backend/.env << 'ENVFILE'
+cat > ~/HackArena-Agnix-detection/backend/.env << 'ENVFILE'
 PORT=5000
 NODE_ENV=production
 MONGO_URI=mongodb+srv://123mankh_db_user:mankh123password@cluster0.lzlcget.mongodb.net/cleancity?retryWrites=true&w=majority
@@ -55,7 +55,7 @@ ENVFILE
 
 # 7. Build and run Docker container
 echo "🐳 Building Docker image (this takes 3-5 minutes)..."
-cd ~/Illegal-Dumping-Detection/backend
+cd ~/HackArena-Agnix-detection/backend
 sudo docker build -t cleancity-backend .
 
 echo "🚀 Starting container..."
