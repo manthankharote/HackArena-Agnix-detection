@@ -1,0 +1,18 @@
+[project]
+name = "illegal-dumping-env"
+version = "0.1.0"
+description = "Deterministic RL environment for illegal dumping detection"
+authors = [{ name="Manthan" }]
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "openenv-core>=0.2.0"
+]
+
+[project.scripts]
+server = "server.app:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

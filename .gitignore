@@ -1,0 +1,53 @@
+# Node
+**/node_modules
+**/dist
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Python
+**/__pycache__/
+**/.venv/
+**/venv/
+**/env/
+**/*.py[cod]
+**/*$py.class
+**/.pytest_cache/
+**/.python-version
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.log
+
+# Project Specific
+backend/uploads/*
+!backend/uploads/.gitkeep
+ai_service/evidence/*
+!ai_service/evidence/.gitkeep
+frontend/dist/
+
+# WhatsApp Web Session (Puppeteer/Chromium data - very large)
+backend/.wwebjs_auth/
+backend/.wwebjs_cache/
+
+# Machine Learning & Media
+*.pt
+*.onnx
+*.bin
+*.engine
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+!frontend/src/**/*.png
+!frontend/src/**/*.jpg
+!frontend/src/**/*.jpeg
+.ipynb_checkpoints/
+# Sensitive/Private Docs
+demonstration_guide.md
+DEPLOYMENT.md

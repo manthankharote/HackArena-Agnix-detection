@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+openai
+ultralytics
+requests
+python-dotenv
+opencv-python-headless
+numpy
+onnx
+onnxruntime
